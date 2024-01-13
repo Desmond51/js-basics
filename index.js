@@ -1,19 +1,17 @@
+function checkSpeed(speed) {
+  let speedLimit = 70;
+  let pointPerKm = 5;
 
-function fizzBuss(input){
-  if (typeof input !== "number") {
-  return NaN;
-}
- else if ( typeof input ==="number" && (input % 3 === 0) && (input % 5 === 0)) {
-  return "FizzBuzz";
- }
-  else if (typeof input ==="number" && (input % 3 === 0)) {
-      return "Fizz";
-    } else if (typeof input ==="number" && (input % 5 === 0)) {
-      return "Buzz";
+  if (speed <= speedLimit + pointPerKm) {
+    return "OK";
+  } else {
+    const points = Math.floor((speed - speedLimit) / pointPerKm);
+    if (points >= 12) {
+      return "License Suspended";
     } else {
-      return input;
+      return `points: ${points}`;
+    }
+  }
+}
 
-}
-}
-let output = fizzBuss(false)
-console.log(output)
+console.log(checkSpeed(73));
