@@ -1,17 +1,22 @@
-function checkSpeed(speed) {
-  let speedLimit = 70;
-  let pointPerKm = 5;
-
-  if (speed <= speedLimit + pointPerKm) {
-    return "OK";
-  } else {
-    const points = Math.floor((speed - speedLimit) / pointPerKm);
-    if (points >= 12) {
-      return "License Suspended";
-    } else {
-      return `points: ${points}`;
-    }
+const address1= showAddress("Clarks quarter","Buea", "SW0948")
+console.log(address)
+function showAddress(street,city, zipCode ){
+  return {
+    street,
+    city,
+    zipCode
   }
+  
+}
+showAddress(address);
+
+let address = new ShowAddress("Malingo", "Buea", "SW05484");
+console.log(address);
+function ShowAddress(street, city, zipCode){
+  this.street = street,
+  this.city = city,
+  this.zipCode = zipCode
+
 }
 
-console.log(checkSpeed(73));
+Address()
